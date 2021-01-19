@@ -1,0 +1,22 @@
+{
+  "name": "shammah",
+  "version": "1.0.0",
+  "description": "Shammah Enterprice\"",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielMwendwa/Shammah.git"
+  },
+  "author": "Daniel Mwendwa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DanielMwendwa/Shammah/issues"
+  },
+  "homepage": "https://github.com/DanielMwendwa/Shammah#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
