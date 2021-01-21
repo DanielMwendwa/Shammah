@@ -1,12 +1,12 @@
 import {
-    PROUCT_LIST_REQUEST,
+    PRODUCT_LIST_REQUEST,
     PRODUCT_LIST_SUCCESS,
     PRODUCT_LIST_FAIL,
 } from "../constants/productConstants";
 
-export const prductListReducer = (state = { products: [] }, action) => {
+export const productListReducer = (state = { products: [] }, action) => {
     switch (action.type) {
-        case PROUCT_LIST_REQUEST:
+        case PRODUCT_LIST_REQUEST:
             return { loading: true, products: [] };
         case PRODUCT_LIST_SUCCESS:
             return { loading: false, products: action.payload };
