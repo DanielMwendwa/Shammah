@@ -5,13 +5,13 @@ import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { logout } from "../actions/userActions";
 
 const Header = () => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     const userLogin = useSelector((state) => state.userLogin);
     const { userInfo } = userLogin;
 
     const logoutHandler = () => {
-        dispatch(logout())
+        dispatch(logout());
     };
 
     return (
@@ -44,6 +44,19 @@ const Header = () => {
                                         <i className="fas fa-user"></i> Sign In
                                     </Nav.Link>
                                 </LinkContainer>
+                            )}
+                            {userInfo && userInfo.isAdmin && (
+                                <NavDropdown title="Admin" id="adminmenu">
+                                    <LinkContainer to="/admin/userlist">
+                                        <NavDropdown.Item>Users</NavDropdown.Item>
+                                    </LinkContainer>
+                                    <LinkContainer to="/admin/productlist">
+                                        <NavDropdown.Item>Products</NavDropdown.Item>
+                                    </LinkContainer>
+                                    <LinkContainer to="/admin/orderlist">
+                                        <NavDropdown.Item>Orders</NavDropdown.Item>
+                                    </LinkContainer>
+                                </NavDropdown>
                             )}
                         </Nav>
                     </Navbar.Collapse>
