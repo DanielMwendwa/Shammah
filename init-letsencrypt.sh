@@ -85,7 +85,7 @@ case "$email" in
 esac
 
 # Enable staging mode if needed
-if [[ $STAGING == true ]] then staging_arg="--staging"; fi
+if [[ $STAGING == true ]]; then staging_arg="--staging"; fi
 
 docker-compose run --rm --entrypoint "\
   certbot certonly --webroot -w /var/www/certbot \
