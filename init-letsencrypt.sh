@@ -4,6 +4,7 @@ set -e
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
+        # Staging option for testing your setup to avoid hitting request limits
         --staging)
             STAGING=true
             shift;;
@@ -16,9 +17,8 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [[ $# -ne 2 ]]; then
-    echo "Usage: ./init-letsencrypt.sh [--staging] <email> <domain>"
-    echo "Fetches and ensures the renewal of a Let’s Encrypt certificate for one or multiple domains in a docker-compose setup with nginx. 
-            This is useful when you need to set up nginx as a reverse proxy for an application"
+    echo "Usage: ./init-letsencrypt.sh [--staging] <email> <domains>"
+    echo "Fetches and ensures the renewal of a Let’s Encrypt certificate for one or multiple domains in a docker-compose setup with nginx. This is useful when you need to set up nginx as a reverse proxy for an application"
     exit
 fi
 
