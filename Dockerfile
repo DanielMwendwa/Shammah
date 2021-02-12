@@ -1,15 +1,16 @@
-# Builds a React app and puts the static assets in the build folder
-FROM node:alpine AS ui-build
-WORKDIR /usr/src/app
-COPY frontend/ ./frontend/
-RUN cd frontend && npm install && npm run build
+# Specify a base image
+FROM node:alpine
 
-# Takes the static build files and serve them with node server
-FROM node:alpine AS server-build
-WORKDIR /root/
-COPY --from=ui-build /usr/src/app/frontend/build ./frontend/build
-COPY package*.json .
+# Specify working directory 
+WORKDIR /app
+
+COPY ./package.json ./
+# COPY package*.json ./
+
+# Install some dependencies
 RUN npm install
+
 COPY . .
 
+# Default command
 CMD ["npm", "start"]
