@@ -3,6 +3,11 @@ version: "3"
 services:
     mongodb:
         image: "mongo"
+    react-node:
+        build: .
+        volumes:
+            - /root/node_modules
+            - .:/root
     nginx:
         image: nginx:1.15-alpine
         restart: unless-stopped
