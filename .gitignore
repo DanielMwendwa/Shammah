@@ -124,4 +124,4 @@ node_modules/
 .env.production.local
 
 /data/certbot
-images/
+app.conf
