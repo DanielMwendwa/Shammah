@@ -22,6 +22,10 @@ if [[ $# -lt 2 ]]; then
     exit
 fi
 
+# Assign the program arguments to bash variables.
+arg1=$1; shift
+arg2=( "$@" )
+
 if ! [ -x "$(command -v docker-compose)" ]; then
   echo 'Error: docker-compose is not installed.' >&2
   exit 1
