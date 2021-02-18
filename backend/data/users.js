@@ -5,7 +5,7 @@ dotenv.config();
 
 const users = [
     {
-        name: "Admin User",
+        name: process.env.ADMIN_USERNAME,
         email: process.env.ADMIN_EMAIL,
         password: bcrypt.hashSync(process.env.ADMIN_PASSWORD, 10),
         isAdmin: true,
