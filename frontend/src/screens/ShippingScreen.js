@@ -28,13 +28,24 @@ const ShippingScreen = ({ history }) => {
             <h1>Shipping</h1>
             <Form onSubmit={submitHandler}>
                 <Form.Group controlId="address">
-                    <Form.Label>Address</Form.Label>
+                    <Form.Label>Address / Phone Number </Form.Label>
                     <Form.Control
                         type="text"
                         placeholder="Enter address"
                         value={address}
                         required
                         onChange={(e) => setAddress(e.target.value)}
+                    ></Form.Control>
+                </Form.Group>
+
+                <Form.Group controlId="country">
+                    <Form.Label>County</Form.Label>
+                    <Form.Control
+                        type="text"
+                        placeholder="Enter Country"
+                        value={country}
+                        required
+                        onChange={(e) => setCountry(e.target.value)}
                     ></Form.Control>
                 </Form.Group>
 
@@ -50,24 +61,13 @@ const ShippingScreen = ({ history }) => {
                 </Form.Group>
 
                 <Form.Group controlId="postalCode">
-                    <Form.Label>Postal Code</Form.Label>
+                    <Form.Label>Postal Code / Location</Form.Label>
                     <Form.Control
                         type="text"
                         placeholder="Enter Postal Code"
                         value={postalCode}
                         required
                         onChange={(e) => setPostalCode(e.target.value)}
-                    ></Form.Control>
-                </Form.Group>
-
-                <Form.Group controlId="country">
-                    <Form.Label>Country</Form.Label>
-                    <Form.Control
-                        type="text"
-                        placeholder="Enter Country"
-                        value={country}
-                        required
-                        onChange={(e) => setCountry(e.target.value)}
                     ></Form.Control>
                 </Form.Group>
 
