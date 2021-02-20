@@ -193,7 +193,12 @@ const OrderScreen = ({ match, history }) => {
                             {!order.isPaid && (
                                 <ListGroup.Item>
                                     {loadingPay && <Loader />}
-                                    {!sdkReady ? (
+                                    {order.paymentMethod === "Mpesa" ? (
+                                        <>
+                                            <h2>Mpesa Paybill No. 66789</h2>
+                                            <h2>Phone Number: 0789898989</h2>
+                                        </>
+                                    ) : !sdkReady ? (
                                         <Loader />
                                     ) : (
                                         <PayPalButton
