@@ -37,6 +37,7 @@ const PaymentScreen = ({ history }) => {
                             id="Mpesa"
                             name="paymentMethod"
                             value="Mpesa"
+                            checked
                             onChange={(e) => setPaymentMethod(e.target.value)}
                         ></Form.Check>
                         <Form.Check
@@ -45,7 +46,6 @@ const PaymentScreen = ({ history }) => {
                             id="PayPal"
                             name="paymentMethod"
                             value="PayPal"
-                            checked
                             onChange={(e) => setPaymentMethod(e.target.value)}
                         ></Form.Check>
                     </Col>
